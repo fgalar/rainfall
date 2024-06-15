@@ -12,7 +12,7 @@ Owner of the file is level1, and these permission will execute all functions wit
 0x08048f51 <+145>:	call   0x8054640 <execv>
 ```
 
-We can see wath we have at 0x80c5348 :
+We can see at 0x80c5348 :
 ```
 (gdb) p (char *) 0x80c5348
 $2 = 0x80c5348 "/bin/sh"
