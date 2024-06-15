@@ -50,4 +50,4 @@ Save 32 bytes space
 ```
 Get atoi of Argv[1]
 
-![stack.png](ressources/stack.png)
+![stack3.png](ressources/stack.svg)
