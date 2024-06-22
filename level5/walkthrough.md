@@ -6,6 +6,7 @@ The program has 3 functions :
 
 ```assembly
 (gdb) info function
+
 0x080484a4  o
 0x080484c2  n
 0x08048504  main
@@ -29,6 +30,7 @@ Our buffer starts to write at the 4th element. Like in previous challenge we wil
 We can found the address of exit() link, disassembling exit function, and take `jmp` address : `0x8049838`  
 ```assembly
 (gdb) disas exit
+
 Dump of assembler code for function exit@plt:
    0x080483d0 <+0>:		jmp    *0x8049838
    0x080483d6 <+6>:		push   $0x28

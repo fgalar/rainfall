@@ -1,7 +1,7 @@
-#include <stdio.h> // type stdout
+#include <stdio.h>
 #include <unistd.h>
 
-int     m; // weak
+int     m;
 
 void	v(void)
 {
