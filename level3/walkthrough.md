@@ -9,7 +9,7 @@ The program contain 2 functions.
 ## Vulnerability
 
 The interesting one is v(), because it contain our vulnerability : system("/bin/sh").
-In order to entering in the vulnerable condition, we need to set m == 64.
+In order to enter in the vulnerable condition, we need to set m == 64.
 
 ``` asm
 
