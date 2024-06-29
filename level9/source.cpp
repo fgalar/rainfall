@@ -1,15 +1,25 @@
-public class N {         // 108
-	private void *f          // 4
-	private char str[100]; // 100
-	private int i;         // 4
-}
+#include <string.h>
 
-int ( *tab[2])(N *, N *) = { &N::operator+, &N::operator- };
+class N {				 // 108
+	public :
+		typedef int (N::*function)(N*);
+
+		function f;      // 4
+		char str[100];   // 100
+		int i;           // 4		
+		
+		N(int i);
+		void setAnnotation(char *str);
+		int operator+(N *obj);
+		int operator-(N *obj);
+};
+
+N::function tab[2] = { &N::operator+, &N::operator- };
 
 // constructor
-void N::N(int i)
+N::N(int i)
 {
-	this->f = tab;
+	this->f = tab[0];
 	this->i = i;
 }
 
@@ -31,7 +41,7 @@ int N::operator-(N *obj)
 	return this->i - obj->i;
 }
 
-void main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	N *obj1 ;
 	N *obj2;
@@ -43,7 +53,5 @@ void main(int argc, char **argv)
 	obj2 = new N(6);
 	obj1->setAnnotation(argv[1]);
 
-	obj2->f(obj1);
-
-	return;
+	(obj2->*obj2->f)(obj1);
 }
